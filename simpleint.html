@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            margin-top: 50px;
+            color: #004080;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #666;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #004080;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00254d;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Simple Interest Calculator</h1>
+    <form id="simple-interest-form">
+        <label for="principal">Principal Amount:</label>
+        <input type="text" id="principal" name="principal" required>
+
+        <label for="rate">Annual Interest Rate:</label>
+        <input type="text" id="rate" name="rate" required>
+
+        <label for="time">Time in Years:</label>
+        <input type="text" id="time" name="time" required>
+
+        <button type="button" onclick="calculateSimpleInterest()">Calculate</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateSimpleInterest() {
+            var principal = parseFloat(document.getElementById("principal").value);
+            var rate = parseFloat(document.getElementById("rate").value);
+            var time = parseFloat(document.getElementById("time").value);
+
+            var simpleInterest = (principal * rate * time) / 100;
+
+            document.getElementById("result").innerText = `Simple Interest: ₹${simpleInterest.toFixed(2)}`;
+        }
+    </script>
+</body>
+
+</html>
